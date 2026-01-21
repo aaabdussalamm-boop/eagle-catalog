@@ -50,7 +50,7 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
@@ -99,7 +99,7 @@
             padding: 0.8rem;
             border-radius: 4px;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .specs strong {
@@ -174,23 +174,59 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>🔌 Eagle Catalog</h1>
-        <p>Koleksi Desain PCB menggunakan Autodesk Eagle</p>
+        <p>Koleksi Desain PCB Audio & Power Supply menggunakan Autodesk Eagle</p>
     </header>
 
     <div class="container">
         <div class="intro">
             <h2>Selamat Datang!</h2>
-            <p>Repository ini berisi koleksi desain PCB yang saya buat menggunakan Autodesk Eagle. Semua file dapat diunduh gratis dan digunakan untuk pembelajaran atau proyek elektronika Anda.</p>
+            <p>Repository ini berisi koleksi desain PCB untuk aplikasi audio dan power supply yang saya buat menggunakan Autodesk Eagle. Semua file dapat diunduh gratis dan digunakan untuk pembelajaran atau proyek elektronika Anda.</p>
         </div>
 
         <h2 style="margin-bottom: 1rem; color: #667eea;">📂 Daftar Proyek</h2>
         
         <div class="projects-grid">
+            <!-- PCG Quad - Preamp & Filter -->
+            <div class="project-card">
+                <div class="project-image">
+                    🎵
+                </div>
+                <div class="project-content">
+                    <h3>PCG Quad - Preamp & Filter <span class="badge">NEW</span></h3>
+                    <p>Rangkaian preamp dan filter audio menggunakan IC TL084 (Quad Op-Amp) dengan built-in voltage inverter IC 7660. Cocok untuk aplikasi audio mixing, equalizer, atau efek audio.</p>
+                    
+                    <div class="specs">
+                        <strong>Spesifikasi:</strong><br>
+                        • IC Utama: TL084 (Quad Op-Amp)<br>
+                        • Power Supply: Built-in 7660 inverter<br>
+                        • Supply Voltage: ±12V atau ±15V<br>
+                        • Channel: 4 op-amp independen<br>
+                        • Aplikasi: Preamp, filter, mixing
+                    </div>
+                    
+                    <div class="project-files">
+                        <a href="pcg_quad.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
+                        <a href="pcg_quad.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- IC 7660 Voltage Inverter -->
             <div class="project-card">
                 <div class="project-image">
@@ -198,33 +234,20 @@
                 </div>
                 <div class="project-content">
                     <h3>IC 7660 - Voltage Inverter</h3>
-                    <p>Rangkaian pembuat tegangan negatif menggunakan IC 7660. IC ini dapat mengkonversi tegangan positif menjadi tegangan negatif dengan arus output hingga 100mA.</p>
+                    <p>Rangkaian pembuat tegangan negatif menggunakan IC 7660. IC ini dapat mengkonversi tegangan positif menjadi tegangan negatif dengan arus output hingga 100mA. Sangat berguna untuk power supply op-amp.</p>
                     
                     <div class="specs">
                         <strong>Spesifikasi:</strong><br>
                         • Input: +5V hingga +12V DC<br>
                         • Output: -5V hingga -12V DC<br>
                         • Arus Max: 100mA<br>
-                        • Komponen utama: IC 7660, kapasitor
+                        • Komponen: IC 7660, kapasitor<br>
+                        • Aplikasi: Dual supply untuk op-amp
                     </div>
                     
                     <div class="project-files">
                         <a href="7660.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
                         <a href="7660.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card untuk proyek berikutnya - bisa ditambahkan nanti -->
-            <div class="project-card" style="opacity: 0.6;">
-                <div class="project-image">
-                    🔧
-                </div>
-                <div class="project-content">
-                    <h3>Proyek Selanjutnya</h3>
-                    <p>Tempat untuk proyek berikutnya yang akan segera ditambahkan...</p>
-                    <div class="project-files">
-                        <span style="color: #999;">Coming soon</span>
                     </div>
                 </div>
             </div>
@@ -237,18 +260,20 @@
                 <li>Buka Autodesk Eagle di komputer Anda</li>
                 <li>Buka file .sch untuk melihat skematik atau .brd untuk melihat layout PCB</li>
                 <li>Anda dapat mengedit dan menggunakan desain sesuai kebutuhan</li>
-                <li>Untuk mencetak PCB, export file .brd ke format Gerber</li>
+                <li>Untuk mencetak PCB, export file .brd ke format Gerber melalui menu CAM Processor</li>
             </ol>
             
             <p style="margin-top: 1.5rem;"><strong>Atau clone seluruh repository:</strong></p>
             <div class="code-block">
                 git clone https://github.com/aaabdussalamm-boop/eagle-catalog.git
             </div>
+
+            <p style="margin-top: 1.5rem;"><strong>💡 Tips:</strong> Kedua rangkaian ini dapat digabungkan - gunakan 7660 sebagai power supply negatif untuk rangkaian preamp TL084 Anda!</p>
         </div>
     </div>
 
     <footer>
-        <p>Dibuat dengan ❤️ untuk komunitas elektronika Indonesia</p>
+        <p>Dibuat dengan ❤️ untuk komunitas elektronika & audio DIY Indonesia</p>
         <p style="margin-top: 0.5rem;">
             <a href="https://github.com/aaabdussalamm-boop/eagle-catalog">⭐ Star di GitHub</a>
         </p>
