@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koleksi Desain PCB Eagle</title>
+    <title>Eagle Catalog - Koleksi Desain PCB</title>
     <style>
         * {
             margin: 0;
@@ -94,6 +94,18 @@
             font-size: 0.95rem;
         }
         
+        .specs {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .specs strong {
+            color: #667eea;
+        }
+        
         .project-files {
             display: flex;
             gap: 0.5rem;
@@ -103,11 +115,12 @@
         .file-badge {
             background: #e0e7ff;
             color: #667eea;
-            padding: 0.3rem 0.8rem;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
             font-size: 0.85rem;
             text-decoration: none;
             transition: background 0.3s ease;
+            display: inline-block;
         }
         
         .file-badge:hover {
@@ -165,75 +178,53 @@
 </head>
 <body>
     <header>
-        <h1>🔌 Koleksi Desain PCB Eagle</h1>
-        <p>Berbagai desain skematik dan PCB layout menggunakan Autodesk Eagle</p>
+        <h1>🔌 Eagle Catalog</h1>
+        <p>Koleksi Desain PCB menggunakan Autodesk Eagle</p>
     </header>
 
     <div class="container">
         <div class="intro">
-            <h2>Tentang Repository Ini</h2>
-            <p>Selamat datang! Repository ini berisi koleksi desain PCB yang saya buat menggunakan Autodesk Eagle. Semua file dapat diunduh dan digunakan untuk pembelajaran atau proyek Anda sendiri.</p>
+            <h2>Selamat Datang!</h2>
+            <p>Repository ini berisi koleksi desain PCB yang saya buat menggunakan Autodesk Eagle. Semua file dapat diunduh gratis dan digunakan untuk pembelajaran atau proyek elektronika Anda.</p>
         </div>
 
         <h2 style="margin-bottom: 1rem; color: #667eea;">📂 Daftar Proyek</h2>
         
         <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    📟
-                </div>
-                <div class="project-content">
-                    <h3>Nama Proyek 1</h3>
-                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
-                    <div class="project-files">
-                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
-                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    🎛️
-                </div>
-                <div class="project-content">
-                    <h3>Nama Proyek 2</h3>
-                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
-                    <div class="project-files">
-                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
-                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 3 -->
+            <!-- IC 7660 Voltage Inverter -->
             <div class="project-card">
                 <div class="project-image">
                     ⚡
                 </div>
                 <div class="project-content">
-                    <h3>Nama Proyek 3</h3>
-                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
+                    <h3>IC 7660 - Voltage Inverter</h3>
+                    <p>Rangkaian pembuat tegangan negatif menggunakan IC 7660. IC ini dapat mengkonversi tegangan positif menjadi tegangan negatif dengan arus output hingga 100mA.</p>
+                    
+                    <div class="specs">
+                        <strong>Spesifikasi:</strong><br>
+                        • Input: +5V hingga +12V DC<br>
+                        • Output: -5V hingga -12V DC<br>
+                        • Arus Max: 100mA<br>
+                        • Komponen utama: IC 7660, kapasitor
+                    </div>
+                    
                     <div class="project-files">
-                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
-                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
+                        <a href="7660.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
+                        <a href="7660.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Card 4 -->
-            <div class="project-card">
+            <!-- Card untuk proyek berikutnya - bisa ditambahkan nanti -->
+            <div class="project-card" style="opacity: 0.6;">
                 <div class="project-image">
-                    🔋
+                    🔧
                 </div>
                 <div class="project-content">
-                    <h3>Nama Proyek 4</h3>
-                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
+                    <h3>Proyek Selanjutnya</h3>
+                    <p>Tempat untuk proyek berikutnya yang akan segera ditambahkan...</p>
                     <div class="project-files">
-                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
-                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
+                        <span style="color: #999;">Coming soon</span>
                     </div>
                 </div>
             </div>
@@ -242,24 +233,24 @@
         <div class="how-to-use">
             <h2>📥 Cara Menggunakan</h2>
             <ol>
-                <li>Download file yang Anda inginkan dengan klik tombol file di atas</li>
+                <li>Klik tombol <strong>"Download Schematic"</strong> atau <strong>"Download Board"</strong> di atas</li>
                 <li>Buka Autodesk Eagle di komputer Anda</li>
                 <li>Buka file .sch untuk melihat skematik atau .brd untuk melihat layout PCB</li>
                 <li>Anda dapat mengedit dan menggunakan desain sesuai kebutuhan</li>
+                <li>Untuk mencetak PCB, export file .brd ke format Gerber</li>
             </ol>
             
             <p style="margin-top: 1.5rem;"><strong>Atau clone seluruh repository:</strong></p>
             <div class="code-block">
-                git clone https://github.com/username/repository-name.git
+                git clone https://github.com/aaabdussalamm-boop/eagle-catalog.git
             </div>
         </div>
     </div>
 
     <footer>
-        <p>Dibuat dengan ❤️ untuk komunitas elektronika</p>
+        <p>Dibuat dengan ❤️ untuk komunitas elektronika Indonesia</p>
         <p style="margin-top: 0.5rem;">
-            <a href="https://github.com/username">GitHub</a> | 
-            <a href="mailto:email@example.com">Kontak</a>
+            <a href="https://github.com/aaabdussalamm-boop/eagle-catalog">⭐ Star di GitHub</a>
         </p>
     </footer>
 </body>
