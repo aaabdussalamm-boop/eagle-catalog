@@ -47,6 +47,18 @@
             margin-bottom: 2rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
+        .category {
+            margin-bottom: 3rem;
+        }
+
+        .category h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
         
         .projects-grid {
             display: grid;
@@ -71,12 +83,23 @@
         .project-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 3rem;
+        }
+
+        .project-image.biomedical {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+        }
+
+        .project-image.audio {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+        }
+
+        .project-image.power {
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
         }
         
         .project-content {
@@ -185,69 +208,160 @@
             font-weight: bold;
             margin-left: 0.5rem;
         }
+
+        .badge.hot {
+            background: #ef4444;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .warning-box strong {
+            color: #92400e;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>🔌 Eagle Catalog</h1>
-        <p>Koleksi Desain PCB Audio & Power Supply menggunakan Autodesk Eagle</p>
+        <p>Koleksi Desain PCB: Biomedical, Audio & Power Supply</p>
     </header>
 
     <div class="container">
         <div class="intro">
             <h2>Selamat Datang!</h2>
-            <p>Repository ini berisi koleksi desain PCB untuk aplikasi audio dan power supply yang saya buat menggunakan Autodesk Eagle. Semua file dapat diunduh gratis dan digunakan untuk pembelajaran atau proyek elektronika Anda.</p>
+            <p>Repository ini berisi koleksi desain PCB untuk aplikasi biomedical, audio, dan power supply yang saya buat menggunakan Autodesk Eagle. Semua file dapat diunduh gratis dan digunakan untuk pembelajaran atau proyek elektronika Anda.</p>
         </div>
 
-        <h2 style="margin-bottom: 1rem; color: #667eea;">📂 Daftar Proyek</h2>
-        
-        <div class="projects-grid">
-            <!-- PCG Quad - Preamp & Filter -->
-            <div class="project-card">
-                <div class="project-image">
-                    🎵
-                </div>
-                <div class="project-content">
-                    <h3>PCG Quad - Preamp & Filter <span class="badge">NEW</span></h3>
-                    <p>Rangkaian preamp dan filter audio menggunakan IC TL084 (Quad Op-Amp) dengan built-in voltage inverter IC 7660. Cocok untuk aplikasi audio mixing, equalizer, atau efek audio.</p>
-                    
-                    <div class="specs">
-                        <strong>Spesifikasi:</strong><br>
-                        • IC Utama: TL084 (Quad Op-Amp)<br>
-                        • Power Supply: Built-in 7660 inverter<br>
-                        • Supply Voltage: ±12V atau ±15V<br>
-                        • Channel: 4 op-amp independen<br>
-                        • Aplikasi: Preamp, filter, mixing
+        <!-- Biomedical Section -->
+        <div class="category">
+            <h2>⚕️ Biomedical Electronics</h2>
+            <div class="projects-grid">
+                <!-- Holter AD 2-Channel -->
+                <div class="project-card">
+                    <div class="project-image biomedical">
+                        📊
                     </div>
-                    
-                    <div class="project-files">
-                        <a href="pcg_quad.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
-                        <a href="pcg_quad.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
+                    <div class="project-content">
+                        <h3>Holter AD - 2 Channel ECG <span class="badge hot">HOT</span></h3>
+                        <p>Holter monitor 2 channel untuk monitoring ECG jangka panjang dengan ESP32 DevKit V1. Menggunakan 2x AD620 untuk dual channel acquisition dan TL084 untuk filtering. Dilengkapi dengan shield khusus ESP32 untuk akuisisi data dan wireless transmission.</p>
+                        
+                        <div class="specs">
+                            <strong>Spesifikasi:</strong><br>
+                            • Instrumentation Amp: 2x AD620<br>
+                            • Filter: TL084 (Quad Op-Amp)<br>
+                            • Microcontroller: ESP32 DevKit V1 shield<br>
+                            • Channel: 2 independent ECG channels<br>
+                            • Features: WiFi/Bluetooth data transmission<br>
+                            • Aplikasi: Holter monitoring, ambulatory ECG
+                        </div>
+
+                        <div class="warning-box">
+                            <strong>⚠️ Peringatan:</strong> Rangkaian ini untuk tujuan pembelajaran dan penelitian. Tidak boleh digunakan untuk diagnosis medis tanpa sertifikasi yang sesuai. Pastikan menggunakan isolated power supply untuk keamanan.
+                        </div>
+                        
+                        <div class="project-files">
+                            <a href="HOLTER AD.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
+                            <a href="HOLTER AD.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ECG Circuit -->
+                <div class="project-card">
+                    <div class="project-image biomedical">
+                        ❤️
+                    </div>
+                    <div class="project-content">
+                        <h3>ECG Circuit</h3>
+                        <p>Rangkaian elektrokardiogram (ECG/EKG) untuk merekam aktivitas listrik jantung. Menggunakan instrumentation amplifier AD620 untuk akuisisi sinyal, TL084 untuk filtering, dan OP07 sebagai DRL (Driven Right Leg) circuit.</p>
+                        
+                        <div class="specs">
+                            <strong>Spesifikasi:</strong><br>
+                            • IC Utama: AD620 (Instrumentation Amp)<br>
+                            • Filter: TL084 (Quad Op-Amp)<br>
+                            • DRL Circuit: OP07 (Precision Op-Amp)<br>
+                            • Gain: Adjustable (via resistor)<br>
+                            • Bandwidth: 0.5Hz - 150Hz (typical ECG)<br>
+                            • Aplikasi: Medical monitoring, biofeedback
+                        </div>
+
+                        <div class="warning-box">
+                            <strong>⚠️ Peringatan:</strong> Rangkaian ini untuk tujuan pembelajaran dan penelitian. Tidak boleh digunakan untuk diagnosis medis tanpa sertifikasi yang sesuai.
+                        </div>
+                        
+                        <div class="project-files">
+                            <a href="ecg.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
+                            <a href="ecg.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- IC 7660 Voltage Inverter -->
-            <div class="project-card">
-                <div class="project-image">
-                    ⚡
-                </div>
-                <div class="project-content">
-                    <h3>IC 7660 - Voltage Inverter</h3>
-                    <p>Rangkaian pembuat tegangan negatif menggunakan IC 7660. IC ini dapat mengkonversi tegangan positif menjadi tegangan negatif dengan arus output hingga 100mA. Sangat berguna untuk power supply op-amp.</p>
-                    
-                    <div class="specs">
-                        <strong>Spesifikasi:</strong><br>
-                        • Input: +5V hingga +12V DC<br>
-                        • Output: -5V hingga -12V DC<br>
-                        • Arus Max: 100mA<br>
-                        • Komponen: IC 7660, kapasitor<br>
-                        • Aplikasi: Dual supply untuk op-amp
+        <!-- Audio Section -->
+        <div class="category">
+            <h2>🎵 Audio Electronics</h2>
+            <div class="projects-grid">
+                <!-- PCG Quad -->
+                <div class="project-card">
+                    <div class="project-image audio">
+                        🎛️
                     </div>
-                    
-                    <div class="project-files">
-                        <a href="7660.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
-                        <a href="7660.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
+                    <div class="project-content">
+                        <h3>PCG Quad - Preamp & Filter</h3>
+                        <p>Rangkaian preamp dan filter audio menggunakan IC TL084 (Quad Op-Amp) dengan built-in voltage inverter IC 7660. Cocok untuk aplikasi audio mixing, equalizer, atau efek audio.</p>
+                        
+                        <div class="specs">
+                            <strong>Spesifikasi:</strong><br>
+                            • IC Utama: TL084 (Quad Op-Amp)<br>
+                            • Power Supply: Built-in 7660 inverter<br>
+                            • Supply Voltage: ±12V atau ±15V<br>
+                            • Channel: 4 op-amp independen<br>
+                            • Aplikasi: Preamp, filter, mixing
+                        </div>
+                        
+                        <div class="project-files">
+                            <a href="pcg_quad.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
+                            <a href="pcg_quad.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Power Supply Section -->
+        <div class="category">
+            <h2>⚡ Power Supply</h2>
+            <div class="projects-grid">
+                <!-- IC 7660 -->
+                <div class="project-card">
+                    <div class="project-image power">
+                        🔋
+                    </div>
+                    <div class="project-content">
+                        <h3>IC 7660 - Voltage Inverter</h3>
+                        <p>Rangkaian pembuat tegangan negatif menggunakan IC 7660. IC ini dapat mengkonversi tegangan positif menjadi tegangan negatif dengan arus output hingga 100mA. Sangat berguna untuk power supply op-amp.</p>
+                        
+                        <div class="specs">
+                            <strong>Spesifikasi:</strong><br>
+                            • Input: +5V hingga +12V DC<br>
+                            • Output: -5V hingga -12V DC<br>
+                            • Arus Max: 100mA<br>
+                            • Komponen: IC 7660, kapasitor<br>
+                            • Aplikasi: Dual supply untuk op-amp
+                        </div>
+                        
+                        <div class="project-files">
+                            <a href="7660.sch" class="file-badge" download>📄 Download Schematic (.sch)</a>
+                            <a href="7660.brd" class="file-badge" download>🔲 Download Board (.brd)</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -268,12 +382,19 @@
                 git clone https://github.com/aaabdussalamm-boop/eagle-catalog.git
             </div>
 
-            <p style="margin-top: 1.5rem;"><strong>💡 Tips:</strong> Kedua rangkaian ini dapat digabungkan - gunakan 7660 sebagai power supply negatif untuk rangkaian preamp TL084 Anda!</p>
+            <p style="margin-top: 1.5rem;"><strong>💡 Tips Integrasi:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Gunakan IC 7660 sebagai power supply negatif untuk rangkaian PCG Quad atau ECG</li>
+                <li>Rangkaian ECG dan Holter memerlukan isolated power supply untuk keamanan pasien</li>
+                <li>Semua rangkaian op-amp memerlukan dual supply (±V) untuk operasi optimal</li>
+                <li>Holter AD dapat mengirim data ECG via WiFi/Bluetooth ESP32 untuk monitoring real-time</li>
+                <li>Untuk aplikasi portable, gunakan battery dengan voltage regulator yang stabil</li>
+            </ul>
         </div>
     </div>
 
     <footer>
-        <p>Dibuat dengan ❤️ untuk komunitas elektronika & audio DIY Indonesia</p>
+        <p>Dibuat dengan ❤️ untuk komunitas elektronika, audio DIY & biomedical engineering Indonesia</p>
         <p style="margin-top: 0.5rem;">
             <a href="https://github.com/aaabdussalamm-boop/eagle-catalog">⭐ Star di GitHub</a>
         </p>
