@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Desain PCB Eagle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+        
+        .project-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .project-files {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .file-badge {
+            background: #e0e7ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .file-badge:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .how-to-use {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .how-to-use h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .how-to-use ol {
+            margin-left: 1.5rem;
+        }
+        
+        .how-to-use li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔌 Koleksi Desain PCB Eagle</h1>
+        <p>Berbagai desain skematik dan PCB layout menggunakan Autodesk Eagle</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Tentang Repository Ini</h2>
+            <p>Selamat datang! Repository ini berisi koleksi desain PCB yang saya buat menggunakan Autodesk Eagle. Semua file dapat diunduh dan digunakan untuk pembelajaran atau proyek Anda sendiri.</p>
+        </div>
+
+        <h2 style="margin-bottom: 1rem; color: #667eea;">📂 Daftar Proyek</h2>
+        
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    📟
+                </div>
+                <div class="project-content">
+                    <h3>Nama Proyek 1</h3>
+                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
+                    <div class="project-files">
+                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
+                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    🎛️
+                </div>
+                <div class="project-content">
+                    <h3>Nama Proyek 2</h3>
+                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
+                    <div class="project-files">
+                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
+                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    ⚡
+                </div>
+                <div class="project-content">
+                    <h3>Nama Proyek 3</h3>
+                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
+                    <div class="project-files">
+                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
+                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    🔋
+                </div>
+                <div class="project-content">
+                    <h3>Nama Proyek 4</h3>
+                    <p>Deskripsi singkat tentang proyek ini. Jelaskan fungsi utama dan komponen yang digunakan.</p>
+                    <div class="project-files">
+                        <a href="#" class="file-badge">📄 Schematic (.sch)</a>
+                        <a href="#" class="file-badge">🔲 Board (.brd)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="how-to-use">
+            <h2>📥 Cara Menggunakan</h2>
+            <ol>
+                <li>Download file yang Anda inginkan dengan klik tombol file di atas</li>
+                <li>Buka Autodesk Eagle di komputer Anda</li>
+                <li>Buka file .sch untuk melihat skematik atau .brd untuk melihat layout PCB</li>
+                <li>Anda dapat mengedit dan menggunakan desain sesuai kebutuhan</li>
+            </ol>
+            
+            <p style="margin-top: 1.5rem;"><strong>Atau clone seluruh repository:</strong></p>
+            <div class="code-block">
+                git clone https://github.com/username/repository-name.git
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Dibuat dengan ❤️ untuk komunitas elektronika</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://github.com/username">GitHub</a> | 
+            <a href="mailto:email@example.com">Kontak</a>
+        </p>
+    </footer>
+</body>
+</html>
